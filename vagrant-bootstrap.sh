@@ -3,7 +3,11 @@
 echo "Updating system"
 apt-get update > /vagrant/vagrantup.log
 apt-get install -y wget git build-essential mercurial bzr >> /vagrant/vagrantup.log
- 
+apt-get -y upgrade
+
+echo "Installing & Configuring Vim"
+apt-get install -y vim
+
 echo "Getting go source"
 wget https://go.googlecode.com/files/go1.2.src.tar.gz >> /vagrant/vagrantup.log
 tar -zxf go1.2.src.tar.gz >> /vagrant/vagrantup.log
